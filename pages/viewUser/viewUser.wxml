@@ -1,0 +1,23 @@
+<!--pages/viewUser/viewUser.wxml-->
+<view class="page">
+  <view class="page__hd people_panel">
+    <view class="userinfo">
+        <image bindtap="bindViewTap" class="userinfo-avatar" src="{{poster.head}}" background-size="cover"></image>
+        <text class="userinfo-nickname">{{poster.nickname}}</text>
+    </view>
+  </view>
+  <!--发布者所有发布图书列表  -->
+  <view class="weui-panel__hd left_border">ta发布所有的书籍</view>
+  <view wx:for="{{postedBooks}}" class="weui-panel__bd">
+    <navigator url="/pages/detailBook/detailBook?bid={{item.bid}}" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
+      <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+        <image class="weui-media-box__thumb" src="{{serverPath+item.bookpic}}" />
+      </view>
+      <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+        <view class="weui-media-box__title">{{item.bookname}}</view>
+        <view class="weui-media-box__desc">{{item.description}}</view>
+      </view>
+    </navigator>
+  </view>
+  <!--发布者所有发布图书列表结束  -->
+</view>

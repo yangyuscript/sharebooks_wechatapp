@@ -1,0 +1,5 @@
+/* pages/posts/posts.wxss */
+.left_border{
+  border-left: solid 3px #795548;
+  marigin-top: 0px;
+}

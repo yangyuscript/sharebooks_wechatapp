@@ -1,0 +1,26 @@
+/* pages/addBook/addBook.wxss */
+.bookname_input{
+  border:1.2px solid #795548;
+  margin:2.5%;
+  padding:0.5rem;
+}
+.booktype_piker_con{
+  border:1.2px solid #795548;
+  margin:2.5%;
+  padding:0.5rem;
+  text-align: center;
+}
+.book_textarea{
+  border:1.2px solid #795548;
+  margin:2.5% auto;
+}
+.bookHead{
+  margin:0 auto;
+  margin-bottom:10rpx;
+  width: 100px;
+  height: 120px; 
+  background-color: #eeeeee;
+  font-size:70px;
+  text-align: center;
+  color:#795548;
+}

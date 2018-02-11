@@ -1,0 +1,39 @@
+<!--pages/detailBook/detailBook.wxml-->
+<view class="page">
+  <view class="page__bd" style='margin-bottom:20px;'>
+    <view class="weui-article">
+      <view class="weui-article__h1">{{book.bookname}}</view>
+      <view class="weui-article__section">
+        <view class="weui-article__section">
+          <view class="weui-article__h3">
+            <view class="weui-flex">
+              <view class="weui-flex__item">
+                <view class="placeholder">发布者:{{book.user.nickname}}</view>
+              </view>
+              <view class="weui-flex__item">
+                <view style='margin-right:20px;' class="placeholder">赞:{{book.likenum}}</view>
+              </view>
+            </view>
+            <view class="weui-flex">
+              <!-- <view class="weui-flex__item"> -->
+                <view class="placeholder">标签：{{book.bookType.name}}</view>
+              <!-- </view> -->
+              <view class="weui-flex__item">
+                <view style="margin-left:110rpx;" class="placeholder">发布时间：{{book.time}}</view>
+              </view>
+            </view>
+          </view>
+          <view class="weui-article__p">
+            <image class="weui-article__img" src="{{serverPath+book.bookpic}}" mode="aspectFit" style="height: 180px" />
+          </view>
+          <view class="weui-article__p">
+            {{book.description}}
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="bottom" style="position:fixed;bottom:1px;width:100%;">
+    <button type='primary' style='color:#795548;border:1px solid #795548;height:30px;font-size:13px;' plain='true' open-type="contact">联系发布者</button>
+  </view>
+</view>

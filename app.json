@@ -1,0 +1,55 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/bookmap/bookmap",
+    "pages/personal/personal",
+    "pages/posts/posts",
+    "pages/mybooks/mybooks",
+    "pages/addBook/addBook",
+    "pages/detailBook/detailBook",
+    "pages/viewUser/viewUser"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#795548",
+    "navigationBarTitleText": "流书",
+    "navigationBarTextStyle": "white",
+    "backgroundColor": "#eeeeee",
+    "enablePullDownRefresh": true
+  },
+  "tabBar": {
+    "selectedColor": "#795548",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "img/index.png",
+        "selectedIconPath": "img/index_s.png"
+      },
+      {
+        "pagePath": "pages/bookmap/bookmap",
+        "text": "附近",
+        "iconPath": "img/nearby.png",
+        "selectedIconPath": "img/nearby_s.png"
+      },
+      {
+        "pagePath": "pages/posts/posts",
+        "text": "帖子",
+        "iconPath": "img/posts.png",
+        "selectedIconPath": "img/posts_s.png"
+      },
+      {
+        "pagePath": "pages/personal/personal",
+        "text": "个人",
+        "iconPath": "img/personal.png",
+        "selectedIconPath": "img/personal_s.png"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "downloadFile": 10000
+  },
+  "debug": true
+}

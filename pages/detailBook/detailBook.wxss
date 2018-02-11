@@ -1,0 +1,4 @@
+/* pages/detailBook/detailBook.wxss */
+page{
+    background-color: #FFFFFF;
+}

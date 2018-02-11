@@ -1,0 +1,28 @@
+<!--pages/addBook/addBook.wxml-->
+<form bindsubmit="formSubmit" bindreset="formReset">
+  <view class="section">
+    <view class="section__title">*书名:</view>
+    <input maxlength="50" class="bookname_input" value="{{bookName}}" name="bookName" placeholder="请输入书名" />
+  </view>
+  <view class="section">
+    <view class="section__title">*种类:</view>
+    <picker class="booktype_piker" name="bookType" bindchange="bindPickerChange" value="{{cur_bt_index}}" range="{{bookTypes}}">  
+    <input class="booktype_piker_con" disabled='true' value="{{bookTypes[cur_bt_index]}}" name="bookTypeName" />
+  </picker>
+  </view>
+  <view class="section">
+    <view class="section__title">*描述:</view>
+    <textarea maxlength="1000" class="book_textarea" value="{{bookDesc}}" name="desc" placeholder="请描述你要添加的书籍" />
+  </view>
+  <view class="section" style="margin-bottom:15px;">
+    <view class="section__title">*主图:</view>
+    <view class="bookHead" ontap="chooseBookHead">+</view>
+    <view wx:for="{{tempChoosePicUrls}}" style="text-align:center;">
+      <image style="width:50%;" src="{{item}}" mode="aspectFit"></image>
+    </view>
+  </view>
+  <view class="btn-area">
+    <button formType="submit" style="background:#795548;">添加</button>
+    <button bindtap="formReset">重置</button>
+  </view>
+</form>

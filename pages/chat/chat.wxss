@@ -1,0 +1,38 @@
+/* pages/chat/chat.wxss */
+.page__foot{
+  position:fixed;
+  bottom:0;
+  width:100%;
+}
+.chat_time{
+  text-align: center;
+  font-size:25rpx;
+  color:grey;
+  margin:10rpx;
+}
+.chat_input_sec{
+  
+}
+.chat_input{
+  float:left;
+  line-height: 1.8;
+  border:1px solid #795548;
+  padding:20rpx;
+  width:75%;
+}
+.chat_send_btn{
+  line-height: 2.2;
+  border:1px solid #795548;
+  background:#795548;
+  color:white;
+  font-size:39rpx;
+}
+.placeholder{
+    margin: 5px;
+    padding: 0 10px;
+    text-align: center;
+    background-color: #EBEBEB;
+    /* height: 2.3em; */
+    line-height: 2.3em;
+    color: #cfcfcf;
+}

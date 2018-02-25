@@ -1,0 +1,34 @@
+<!--pages/chat/chat.wxml-->
+<view class="page">
+  <view wx:for="{{allMessagesFromAndTo}}" class="page__bd page__bd_spacing">
+    <view class="weui-flex chat_time">
+      <view class="weui-flex__item">
+        <view class="">{{item.time}}</view>
+      </view>
+    </view>
+    <view wx:if="{{item.fromuserid==fromuserid}}" class="weui-flex chat_left">
+      <view class="chat_left_head">
+        <view class="placeholder"><image style="width: 60rpx; height: 60rpx; background-color: #eeeeee;" mode="scaleToFill" src="{{item.fromuser.head}}"></image></view>
+      </view>
+      <view class="weui-flex__item chat_left_content">
+        <view class="placeholder">{{item.content}}</view>
+      </view>
+    </view>
+    <view wx:else class="weui-flex chat_right">
+      <view class="weui-flex__item chat_right_content">
+        <view class="placeholder">{{item.content}}</view>
+      </view>
+      <view class="chat_right_head">
+        <view class="placeholder"><image style="width: 60rpx; height: 60rpx; background-color: #eeeeee;" mode="scaleToFill" src="{{item.touser.head}}"></image></view>
+      </view>
+    </view>
+  </view>
+  <view class="page__foot">
+        <view class="chat_input_sec">
+            <input class="chat_input" placeholder="这是一个可以自动聚焦的input"/>
+        </view>
+        <view>
+            <button class="chat_send_btn">发送</button>
+        </view>
+    </view>
+</view>

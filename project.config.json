@@ -30,7 +30,7 @@
 				{
 					"id": 0,
 					"name": "testmybooks",
-					"pathName": "pages/viewUser/viewUser",
+					"pathName": "pages/chat/chat",
 					"query": ""
 				}
 			]

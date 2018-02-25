@@ -1,4 +1,5 @@
 // pages/personal/personal.js
+var network = require("../../utils/network.js")
 Page({
 
   /**
@@ -14,23 +15,36 @@ Page({
         icon: '',
         title: '我的书籍',
         desc: 'my books',
-        url: '/pages/mybooks/mybooks'
+        url: '/pages/mybooks/mybooks',
+        isShow: false,
+        news_num:0
+      },
+      {
+        icon: '',
+        title: '聊天消息',
+        desc: 'chat messages',
+        url: '/pages/messages/messages',
+        isShow: true,
+        news_num: 7
       },
       {
         icon: '',
         title: '查看通知',
         desc: 'check notices',
-        url: '/pages/notices/notices'
+        url: '/pages/notices/notices',
+        isShow: false,
+        news_num: 0
       },
       {
         icon: '',
         title: '关于我们',
         desc: 'about sharebook',
-        url: '/pages/aboutus/aboutus'
+        url: '/pages/aboutus/aboutus',
+        isShow: false,
+        news_num: 0
       },
     ]
   },
-
   /**
    * 生命周期函数--监听页面加载
    */
@@ -61,6 +75,31 @@ Page({
         }
       })
     }
+
+    //获取页面需要的初始化数据
+    var $that=this
+    network.POST('/user/getPersonalIniaData', {
+      params: {
+        'token': wx.getStorageSync("token")
+      },
+      success: function (res) {
+        //console.log(res.data)
+        if(res.data.result=='ok'){
+          //console.log($that.data.motto)
+          var $selectTabs = $that.data.selectTabs
+          $selectTabs[1].news_num = res.data.messageNotReadedNum
+          //console.log($selectTabs)
+          $that.setData({
+            selectTabs:$selectTabs
+          })
+        }else{
+          console.log('调用接口获取personalIniaData时用户不存在，请重试')
+        }
+      },
+      fail: function () {
+        console.log('调用接口获取personalIniaData失败')
+      }
+    })
   },
   getUserInfo: function (e) {
     console.log(e)

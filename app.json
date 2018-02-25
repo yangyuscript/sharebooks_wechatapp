@@ -8,7 +8,9 @@
     "pages/mybooks/mybooks",
     "pages/addBook/addBook",
     "pages/detailBook/detailBook",
-    "pages/viewUser/viewUser"
+    "pages/viewUser/viewUser",
+    "pages/messages/messages",
+    "pages/chat/chat"
   ],
   "window": {
     "backgroundTextStyle": "light",

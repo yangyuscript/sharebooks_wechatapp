@@ -16,8 +16,11 @@ Page({
     // wx.setNavigationBarTitle({
     //   title: '詹姆斯-哈登'
     // })
-    var $that=this
-    network.POST('/user/getAllLastestMessagesToUser',{
+    this.initData()
+  },
+  initData:function(){
+    var $that = this
+    network.POST('/user/getAllLastestMessagesToUser', {
       params: {
         'token': wx.getStorageSync("token")
       },
@@ -37,19 +40,18 @@ Page({
       }
     })
   },
-
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-  
+
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+    this.initData()
   },
 
   /**

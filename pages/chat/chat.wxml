@@ -25,10 +25,10 @@
   </view>
   <view class="page__foot">
         <view class="chat_input_sec">
-            <input class="chat_input" placeholder="这是一个可以自动聚焦的input"/>
+            <input value="{{message}}" type="text" bindinput="bindKeyInput" class="chat_input" placeholder="" />
         </view>
         <view>
-            <button class="chat_send_btn">发送</button>
+            <button bindtap="sendMessage" class="chat_send_btn">发送</button>
         </view>
     </view>
 </view>

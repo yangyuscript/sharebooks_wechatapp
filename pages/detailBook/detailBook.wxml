@@ -33,7 +33,9 @@
       </view>
     </view>
   </view>
-  <view class="bottom" style="position:fixed;bottom:1px;width:100%;">
+  <view wx:if="{{isShow}}" class="bottom" style="position:fixed;bottom:1px;width:100%;">
+    <navigator url="/pages/chat/chat?fromuserid={{book.userid}}&fromusername={{book.user.nickname}}">
     <button type='primary' style='color:#795548;border:1px solid #795548;height:30px;font-size:13px;' plain='true' open-type="contact">联系发布者</button>
+    </navigator>
   </view>
 </view>

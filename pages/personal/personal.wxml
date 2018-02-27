@@ -18,7 +18,7 @@
         </view>
         <view class="weui-cell__bd">
           <view style="display: inline-block; vertical-align: middle">{{item.title}}</view>
-          <view wx:if="{{item.isShow}}" class="weui-badge" style="margin-left: 5px;">{{item.news_num}}</view>
+          <view wx:if="{{item.news_num!=0}}" class="weui-badge" style="margin-left: 5px;">{{item.news_num}}</view>
         </view>
         <view class="weui-cell__ft weui-cell__ft_in-access">{{item.desc}}</view>
       </navigator>

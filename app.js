@@ -67,6 +67,7 @@ App({
             success: res => {
               // 可以将 res 发送给后台解码出 unionId
               $that.globalData.userInfo = res.userInfo
+              console.log(res.userInfo)
               // var $user = {
               //   nickName: res.userInfo.nickName,
               //   head: res.userInfo.avatarUrl,

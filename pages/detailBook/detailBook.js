@@ -7,7 +7,8 @@ Page({
    */
   data: {
     book:[],
-    serverPath:getApp().globalData.serverPath+'/'
+    serverPath:getApp().globalData.serverPath+'/',
+    isShow:true
   },
 
   /**
@@ -15,6 +16,7 @@ Page({
    */
   onLoad: function (options) {
     var $bid= options.bid
+    var $userInfo = getApp().globalData.userInfo.nickName
     console.log("bookid is "+$bid)
     var $that= this
     network.POST('/user/getDetailBookByBid', {
@@ -23,6 +25,13 @@ Page({
       },
       success: function (res) {
         var $book=res.data.book
+        console.log("username" + $book.user.nickname)
+        console.log("username" + $userInfo)
+        if ($book.user.nickname == $userInfo){
+          $that.setData({
+            isShow:false
+          })
+        }
         $book.time=$book.time.slice(0,10)
         $that.setData({
           book: $book

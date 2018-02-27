@@ -5,7 +5,7 @@
       <navigator url="/pages/chat/chat?fromuserid={{item.fromuserid}}&fromusername={{item.fromuser.nickname}}" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
         <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
           <image class="weui-media-box__thumb" src="{{item.fromuser.head}}" />
-          <view class="weui-badge" style="position: absolute;top:1em;left:4em;">8</view>
+          <view wx:if="{{item.condi==1}}" class="weui-badge" style="position: absolute;top:1em;left:4em;color:red;">8</view>
         </view>
         <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
           <view class="weui-media-box__title">

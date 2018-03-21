@@ -1,0 +1,27 @@
+<!--pages/search/search.wxml-->
+<input type='text' class='search_input' value="{{searchKey}}" bindinput="bindKeyInput" placeholder='输入关键字搜索书籍' placeholder-style='text-align:center;' confirm-type='search' confirm-hold='true' bindconfirm="searchBooks"/>
+<view class="page__bd">
+  <!--搜索书籍  -->
+  <view class="weui-panel weui-panel_access">
+    <view class="weui-panel__hd left_border">搜索结果</view>
+    <view wx:for="{{searchBooks}}" class="weui-panel__bd">
+      <navigator url="/pages/detailBook/detailBook?bid={{item.bid}}" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
+        <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+          <image class="weui-media-box__thumb" src="{{serverPath+item.bookpic}}" />
+        </view>
+        <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+          <view class="weui-media-box__title">{{item.bookname}}</view>
+          <view class="weui-media-box__desc">{{item.description}}</view>
+        </view>
+      </navigator>
+    </view>
+    <!-- <view class="page__bd page__bd_spacing">
+      <view class="weui-flex">
+        <view class="weui-flex__item">
+          <view class="placeholder">没有更多啦</view>
+        </view>
+      </view>
+    </view> -->
+  </view>
+  <!--搜索书籍结束  -->
+</view>

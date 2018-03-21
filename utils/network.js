@@ -1,4 +1,5 @@
-var API_URL = 'http://kischang.free.ngrok.cc'
+//var API_URL = 'http://kischang.free.ngrok.cc'
+var API_URL = 'http://4gu7zn.natappfree.cc'
 
 var requestHandler = {
   params: {},

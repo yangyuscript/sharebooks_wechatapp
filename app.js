@@ -114,6 +114,7 @@ App({
     accuracy: 0,
     test: 'haha',
     bookTypes: [],
-    serverPath: 'http://kischang.free.ngrok.cc'
+    //serverPath: 'http://kischang.free.ngrok.cc'
+    serverPath: 'http://4gu7zn.natappfree.cc'
   }
 })

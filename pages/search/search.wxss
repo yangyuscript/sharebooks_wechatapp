@@ -1,8 +1,4 @@
-/* pages/posts/posts.wxss */
-.left_border{
-  border-left: solid 3px #795548;
-  marigin-top: 0px;
-}
+/* pages/search/search.wxss */
 .placeholder{
     margin: 5px;
     padding: 0 10px;
@@ -11,4 +7,11 @@
     height: 2.3em;
     line-height: 2.3em;
     color: #cfcfcf;
+}
+.search_input{
+    border-radius:50rpx;
+    margin:10rpx;
+    border:1px solid #795548;
+    color: #795548;
+    text-align:center;
 }

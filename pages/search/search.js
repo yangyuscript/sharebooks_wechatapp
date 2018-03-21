@@ -1,4 +1,4 @@
-// pages/mybooks/mybooks.js
+// pages/search/search.js
 var network = require("../../utils/network.js")
 Page({
 
@@ -6,40 +6,51 @@ Page({
    * 页面的初始数据
    */
   data: {
-    myBooks:[],
+    searchKey:'',
+    searchBooks:[],
     currPage:0,
-    serverPath: getApp().globalData.serverPath+'/'
+    serverPath: getApp().globalData.serverPath + '/'
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
+  bindKeyInput: function(e){
+    this.setData({
+      searchKey:e.detail.value
+    })
+  },
+  searchBooks: function(e){
     this.initData()
   },
   initData:function(){
     var $that = this
-    network.POST('/user/findMyBooks',{
-      params:{
-        'token':wx.getStorageSync('token'),
-        'currPage':$that.data.currPage
+    network.GET('/index/searchBooks', {
+      params: {
+        'searchKey': $that.data.searchKey,
+        'currPage': $that.data.currPage
       },
       success: function (res) {
         console.log(res.data)
+        var $oldBooks = $that.data.searchBooks
         if (res.data.result == 'ok') {
-          var $myBooks=$that.data.myBooks.concat(res.data.myBooks)
+          var $searchBooks = $oldBooks.concat(res.data.searchBooks)
+          console.log($searchBooks)
           $that.setData({
-            myBooks: $myBooks
+            searchBooks: $searchBooks
           })
         } else {
-          console.log('调用接口获取用户发布的书籍时用户不在')
+          console.log('调用接口获取searchBooks失败')
         }
       },
       fail: function () {
-        console.log('调用接口获取sendMessage失败')
+        console.log('调用接口获取searchBooks失败')
       }
     })
   },
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function (options) {
+  
+  },
+
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -73,10 +84,10 @@ Page({
    */
   onPullDownRefresh: function () {
     this.setData({
-      currPage:0,
-      myBooks:[]
+      searchKey:'',
+      searchBooks:[],
+      currPage:0
     })
-    this.initData()
   },
 
   /**
@@ -95,13 +106,5 @@ Page({
    */
   onShareAppMessage: function () {
   
-  },
-  /**
-   * 用户点击添加书籍按钮
-   */
-  addBook: function(event){
-    wx.navigateTo({
-      url: '../addBook/addBook'
-    })
   }
 })

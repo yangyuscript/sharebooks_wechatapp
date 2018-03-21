@@ -83,7 +83,7 @@ Page({
         $that.setData({
           markers: $markers
         })
-        console.log("此时this.data中的markers"+$that.data.markers[0].id)
+        //console.log("此时this.data中的markers"+$that.data.markers[0].id)
       },
       fail: function () {
         console.log('从后台取出当前用户2km范围内的附近用户数据失败')

@@ -14,9 +14,6 @@ Page({
     interval: 5000,
     duration: 1000,
     hasUserInfo: false,
-    //搜索框
-    inputShowed: false,
-    inputVal: "",
     //推荐书籍
     recomendBooks:[],
     //最新书籍
@@ -24,26 +21,11 @@ Page({
     serverPath:app.globalData.serverPath+'/'
   },
   //搜索框事件
-  showInput: function () {
-    this.setData({
-      inputShowed: true
-    });
-  },
-  hideInput: function () {
-    this.setData({
-      inputVal: "",
-      inputShowed: false
-    });
-  },
-  clearInput: function () {
-    this.setData({
-      inputVal: ""
-    });
-  },
-  inputTyping: function (e) {
-    this.setData({
-      inputVal: e.detail.value
-    });
+  showInput: function(){
+    console.log("dianjisearch")
+    wx.navigateTo({
+      url: '../search/search'
+    })
   },
   //事件处理函数
   bindViewTap: function() {

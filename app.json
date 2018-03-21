@@ -10,7 +10,8 @@
     "pages/detailBook/detailBook",
     "pages/viewUser/viewUser",
     "pages/messages/messages",
-    "pages/chat/chat"
+    "pages/chat/chat",
+    "pages/search/search"
   ],
   "window": {
     "backgroundTextStyle": "light",

@@ -8,16 +8,21 @@
     line-height: 2.3em;
     color: #cfcfcf;
 }
-.searchbar-result{
-    margin-top: 0;
-    font-size: 14px;
-}
-.searchbar-result:before{
-    display: none;
-}
 .weui-cell{
     padding: 12px 15px 12px 35px;
 }
 .left_border{
   border-left: solid 3px #795548;
+}
+.search-bar{
+  position:fixed;
+  z-index:1000;
+  width:100%;
+}
+.search_input{
+    border-radius:50rpx;
+    margin:10rpx;
+    border:1px solid #795548;
+    color: #795548;
+    text-align:center;
 }

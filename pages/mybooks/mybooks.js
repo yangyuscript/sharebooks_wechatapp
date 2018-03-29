@@ -77,6 +77,7 @@ Page({
       myBooks:[]
     })
     this.initData()
+    wx.stopPullDownRefresh()
   },
 
   /**

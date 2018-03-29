@@ -1,0 +1,25 @@
+<!--pages/detailBook/detailBook.wxml-->
+<import src="../../wxParse/wxParse.wxml" />
+<view class="page">
+  <view class="page__bd" style='margin-bottom:20px;'>
+    <view class="weui-article">
+      <view class="weui-article__h1">{{post.title}}</view>
+      <view class="weui-article__section">
+        <view class="weui-article__section">
+          <view class="weui-article__h3">
+            <view class="weui-flex">
+              <view class="weui-flex__item">
+                <view style="float:right;color:grey;font-size:30rpx;" class="placeholder">发布时间：{{post.time}}</view>
+              </view>
+            </view>
+          </view>
+          <view class="weui-article__p">
+            <view class="wxParse">
+  <template is="wxParse" data="{{wxParseData:content.nodes}}" />
+</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

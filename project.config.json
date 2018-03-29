@@ -20,6 +20,10 @@
 			"current": -1,
 			"list": []
 		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
 		"game": {
 			"current": -1,
 			"list": []
@@ -30,7 +34,7 @@
 				{
 					"id": 0,
 					"name": "testmybooks",
-					"pathName": "pages/search/search",
+					"pathName": "pages/aboutus/aboutus",
 					"query": ""
 				}
 			]

@@ -1,9 +1,8 @@
-<!--pages/mybooks/mybooks.wxml-->
 <!--pages/posts/posts.wxml-->
 <view class="weui-panel weui-panel_access">
   <view class="weui-panel__hd left_border">精彩帖子</view>
   <view wx:for="{{posts}}" class="weui-panel__bd">
-    <navigator url="/pages/detailPost/detailPost?postId={{item.postId}}" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
+    <navigator url="/pages/detailPost/detailPost?postid={{item.postid}}" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
       <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
         <view class="weui-media-box__title">{{item.title}}</view>
         <view style='float:right;' class="weui-media-box__desc">{{item.time}}</view>

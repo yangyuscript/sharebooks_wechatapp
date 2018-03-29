@@ -1,0 +1,11 @@
+<!--pages/aboutus/aboutus.wxml-->
+<view class="box" style="margin-top:120rpx;margin-left:30rpx;">
+  <view class="content">
+    <p>我们致力于打造一个书籍共享的平台，能够让您发现身边的书籍资源同时将自己所拥有的书籍资源分享出来，让我们的书籍流动起来，共享书籍，共享知识。</p>
+  </view>
+</view>
+<view class="box" style="margin-top:120rpx;margin-right:30rpx;">
+  <view class="content">
+    <p>如果您有任何建议或者意见请您发送邮件到1837475870@qq.com，我们会认真了解您的想法，感谢。</p>
+  </view>
+</view>

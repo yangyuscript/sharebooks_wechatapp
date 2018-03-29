@@ -12,28 +12,28 @@ Page({
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     selectTabs: [
       {
-        icon: '',
+        icon: '/img/personal/mybooks.png',
         title: '我的书籍',
         desc: 'my books',
         url: '/pages/mybooks/mybooks',
         news_num:0
       },
       {
-        icon: '',
+        icon: '/img/personal/message.png',
         title: '聊天消息',
         desc: 'chat messages',
         url: '/pages/messages/messages',
         news_num: 7
       },
       {
-        icon: '',
+        icon: '/img/personal/notice.png',
         title: '查看通知',
         desc: 'check notices',
         url: '/pages/notices/notices',
         news_num: 0
       },
       {
-        icon: '',
+        icon: '/img/personal/aboutus.png',
         title: '关于我们',
         desc: 'about sharebook',
         url: '/pages/aboutus/aboutus',

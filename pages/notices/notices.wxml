@@ -1,0 +1,19 @@
+<!--pages/notices/notices.wxml-->
+<view class="weui-panel weui-panel_access">
+  <view class="weui-panel__hd left_border">流书通知</view>
+  <view wx:for="{{notices}}" class="weui-panel__bd">
+    <navigator url="/pages/detailNotice/detailNotice?nid={{item.nid}}" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
+      <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+        <view class="weui-media-box__title">{{item.title}}</view>
+        <view style='float:right;' class="weui-media-box__desc">{{item.time}}</view>
+      </view>
+    </navigator>
+  </view>
+  <view class="page__bd page__bd_spacing">
+    <view class="weui-flex">
+      <view class="weui-flex__item">
+        <view class="placeholder">没有更多啦</view>
+      </view>
+    </view>
+  </view>
+</view>

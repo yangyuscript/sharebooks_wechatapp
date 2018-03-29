@@ -11,7 +11,11 @@
     "pages/viewUser/viewUser",
     "pages/messages/messages",
     "pages/chat/chat",
-    "pages/search/search"
+    "pages/search/search",
+    "pages/detailPost/detailPost",
+    "pages/notices/notices",
+    "pages/detailNotice/detailNotice",
+    "pages/aboutus/aboutus"
   ],
   "window": {
     "backgroundTextStyle": "light",

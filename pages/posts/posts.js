@@ -77,6 +77,7 @@ Page({
       posts: []
     })
     this.initData()
+    wx.stopPullDownRefresh()
   },
 
   /**

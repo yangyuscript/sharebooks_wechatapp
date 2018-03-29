@@ -15,3 +15,6 @@
     color: #795548;
     text-align:center;
 }
+.left_border{
+  border-left: solid 3px #795548;
+}

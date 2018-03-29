@@ -1,0 +1,5 @@
+/* pages/detailPost/detailPost.wxss */
+@import "../../wxParse/wxParse.wxss";
+page{
+    background-color: #FFFFFF;
+}

@@ -1,0 +1,8 @@
+/* pages/aboutus/aboutus.wxss */
+.box{
+  background-color:#795548;
+  color: white;
+  margin:60rpx;
+  border-radius: 30rpx;
+  padding:20rpx;
+}

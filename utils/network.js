@@ -1,5 +1,5 @@
 //var API_URL = 'http://kischang.free.ngrok.cc'
-var API_URL = 'http://sniste.natappfree.cc'
+var API_URL = 'http://9drpsh.natappfree.cc'
 
 var requestHandler = {
   params: {},
@@ -30,7 +30,8 @@ function request(method,controlPath,requestHandler){
     data: params,
     method: method,//OPTIONS,GET,HEAD,POST,PUT,DELETE,TRACE,CONNECT
     header:{
-      "Content-Type": "application/x-www-form-urlencoded"
+      "Content-Type": "application/x-www-form-urlencoded",
+      "x-access-token": wx.getStorageSync('token')
     },//设置请求头
     success:function(res){
       requestHandler.success(res)

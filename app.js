@@ -44,7 +44,8 @@ App({
                       longitude: getApp().globalData.longitude
                     },
                     header: {
-                      "Content-Type": "application/x-www-form-urlencoded"
+                      "Content-Type": "application/x-www-form-urlencoded",
+                      "x-access-token": wx.getStorageSync("token")
                     },
                     method: 'POST',
                     success: function (res) {
@@ -115,6 +116,6 @@ App({
     test: 'haha',
     bookTypes: [],
     //serverPath: 'http://kischang.free.ngrok.cc'
-    serverPath: 'http://sniste.natappfree.cc'
+    serverPath: 'http://9drpsh.natappfree.cc'
   }
 })

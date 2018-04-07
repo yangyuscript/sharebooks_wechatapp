@@ -29,12 +29,12 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": -1,
+			"current": 0,
 			"list": [
 				{
 					"id": 0,
 					"name": "testmybooks",
-					"pathName": "pages/aboutus/aboutus",
+					"pathName": "pages/mybooks/mybooks",
 					"query": ""
 				}
 			]

@@ -19,7 +19,7 @@
         <view class="placeholder">{{item.content}}</view>
       </view>
       <view class="chat_right_head">
-        <view class="placeholder"><image style="width: 60rpx; height: 60rpx; background-color: #eeeeee;" mode="scaleToFill" src="{{item.touser.head}}"></image></view>
+        <view class="placeholder"><image style="width: 60rpx; height: 60rpx; background-color: #eeeeee;" mode="scaleToFill" src="{{item.fromuser.head}}"></image></view>
       </view>
     </view>
   </view>

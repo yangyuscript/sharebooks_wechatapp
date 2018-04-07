@@ -1,7 +1,7 @@
 <!--index.wxml-->
 <view class="page">
   <view class="search-bar">
-    <input type='text' class='search_input' placeholder='搜索' focus='false' placeholder-style='text-align:center;' confirm-type='search' bindfocus="showInput" />
+    <input type='text' class='search_input' placeholder='搜索' placeholder-style='text-align:center;' confirm-type='search' bindfocus="showInput" />
   </view>
   <swiper style="height:200px;" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
     <block wx:for="{{imgUrls}}">

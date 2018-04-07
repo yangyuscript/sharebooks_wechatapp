@@ -20,49 +20,51 @@ Page({
   //发送消息
   sendMessage: function (e) {
     var $that = this
-    var $head = getApp().globalData.userInfo.avatarUrl
-    var obj = {
-      condi: 0,
-      content: $that.data.message,
-      fromuser: {
-        head: $head
-      },
-      fromuserid: 0,
-      mid: 0,
-      time: $time.formatTime(new Date),
-      touser: {},
-      touserid: 0
-    }
-    //console.log("hehe111" + $that.data.allMessagesFromAndTo)
-    //console.log("hehe obj"+obj.fromuser.head)
-    var $oldAllmfat = $that.data.allMessagesFromAndTo;
-    $oldAllmfat.push(obj)
-    //console.log("...."+$oldAllmfat)
-    $that.setData({
-      allMessagesFromAndTo: $oldAllmfat
-    })
-    //console.log("hehe"+$that.data.allMessagesFromAndTo)
-    network.POST('/user/sendMessage', {
-      params: {
-        'token': wx.getStorageSync("token"),
-        'touserid': $that.data.fromuserid,
-        'message': $that.data.message
-      },
-      success: function (res) {
-        console.log(res.data)
-        console.log($time.formatTime(new Date))
-        if (res.data.result == 'ok') {
-          $that.setData({
-            message:''
-          })
-        } else {
-          console.log('调用接口获取sendMessage时用户不在')
-        }
-      },
-      fail: function () {
-        console.log('调用接口获取sendMessage失败')
+    if ($that.data.message != null && $that.data.message != '') {
+      var $head = getApp().globalData.userInfo.avatarUrl
+      var obj = {
+        condi: 0,
+        content: $that.data.message,
+        fromuser: {
+          head: $head
+        },
+        fromuserid: 0,
+        mid: 0,
+        time: $time.formatTime(new Date),
+        touser: {},
+        touserid: 0
       }
-    })
+      //console.log("hehe111" + $that.data.allMessagesFromAndTo)
+      //console.log("hehe obj"+obj.fromuser.head)
+      var $oldAllmfat = $that.data.allMessagesFromAndTo;
+      $oldAllmfat.push(obj)
+      //console.log("...."+$oldAllmfat)
+      $that.setData({
+        allMessagesFromAndTo: $oldAllmfat
+      })
+      //console.log("hehe"+$that.data.allMessagesFromAndTo)
+      network.POST('/user/sendMessage', {
+        params: {
+          'token': wx.getStorageSync("token"),
+          'touserid': $that.data.fromuserid,
+          'message': $that.data.message
+        },
+        success: function (res) {
+          console.log(res.data)
+          console.log($time.formatTime(new Date))
+          if (res.data.result == 'ok') {
+            $that.setData({
+              message: ''
+            })
+          } else {
+            console.log('调用接口获取sendMessage时用户不在')
+          }
+        },
+        fail: function () {
+          console.log('调用接口获取sendMessage失败')
+        }
+      })
+    }
   },
 
   /**

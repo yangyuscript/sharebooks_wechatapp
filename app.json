@@ -20,7 +20,7 @@
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#795548",
-    "navigationBarTitleText": "流书",
+    "navigationBarTitleText": "流书-共享书籍",
     "navigationBarTextStyle": "white",
     "backgroundColor": "#eeeeee",
     "enablePullDownRefresh": true

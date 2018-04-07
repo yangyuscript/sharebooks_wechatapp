@@ -11,6 +11,53 @@ Page({
     isShow:true
   },
 
+  deleteBook:function(e){
+    var $bid = e.currentTarget.dataset.bid
+    console.log("待删除书籍id是:"+$bid)
+    wx.showModal({
+      title: '提示',
+      content: '确定删除该书籍么？',
+      success: function (res) {
+        if (res.confirm) {
+          console.log('用户确定删除书籍')
+          network.POST('/user/deleteBookByBid', {
+            params: {
+              'bid': $bid
+            },
+            success: function (res) {
+              if(res.data.result=='ok'){
+                wx.showToast({
+                  title: '删除成功',
+                  icon: 'success',
+                  duration: 2000
+                })
+                wx.redirectTo({
+                  url: '../mybooks/mybooks',
+                })
+              }else{
+                wx.showToast({
+                  title: '请检查您的网络',
+                  icon: 'loading',
+                  duration: 2000
+                })
+              }
+            },
+            fail: function () {
+              console.log('删除书籍异常！')
+              wx.showToast({
+                title: '请检查您的网络',
+                icon: 'loading',
+                duration: 2000
+              })
+            }
+          })
+        } else if (res.cancel) {
+          console.log('用户取消删除书籍')
+        }
+      }
+    })
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */

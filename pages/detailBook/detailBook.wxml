@@ -35,7 +35,10 @@
   </view>
   <view wx:if="{{isShow}}" class="bottom" style="position:fixed;bottom:1px;width:100%;">
     <navigator url="/pages/chat/chat?fromuserid={{book.userid}}&fromusername={{book.user.nickname}}">
-    <button type='primary' style='color:#795548;border:1px solid #795548;height:30px;font-size:13px;' plain='true' open-type="contact">联系发布者</button>
+    <button type='primary' style='color:#795548;border:1px solid #795548;height:30px;font-size:13px;' plain='true'>联系发布者</button>
     </navigator>
+  </view>
+  <view wx:else>
+    <button bindtap="deleteBook" style="position:absolute;bottom:0px;width:100%;" data-bid="{{book.bid}}" type="warn">删除书籍</button>
   </view>
 </view>

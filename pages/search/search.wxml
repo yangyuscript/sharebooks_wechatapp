@@ -12,6 +12,7 @@
         <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
           <view class="weui-media-box__title">{{item.bookname}}</view>
           <view class="weui-media-box__desc">{{item.description}}</view>
+          <view style="float:right;" class="weui-media-box__desc">距您{{item.distance}}m</view>
         </view>
       </navigator>
     </view>

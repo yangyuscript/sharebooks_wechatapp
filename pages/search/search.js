@@ -17,11 +17,15 @@ Page({
     })
   },
   searchBooks: function(e){
+    this.setData({
+      searchBooks: [],
+      currPage: 0
+    })
     this.initData()
   },
   initData:function(){
     var $that = this
-    network.GET('/index/searchBooks', {
+    network.GET('/index/searchBooksWithDistance', {
       params: {
         'searchKey': $that.data.searchKey,
         'currPage': $that.data.currPage

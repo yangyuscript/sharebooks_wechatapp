@@ -116,6 +116,6 @@ App({
     test: 'haha',
     bookTypes: [],
     //serverPath: 'http://kischang.free.ngrok.cc'
-    serverPath: 'http://9drpsh.natappfree.cc'
+    serverPath: 'http://3wteau.natappfree.cc'
   }
 })

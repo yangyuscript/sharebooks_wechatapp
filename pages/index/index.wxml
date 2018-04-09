@@ -11,7 +11,7 @@
     </block>
   </swiper>
   <view class="page__bd">
-    <!--附近热门书籍  -->
+    <!--推荐书籍书籍  -->
     <view class="weui-panel weui-panel_access">
       <view class="weui-panel__hd left_border">推荐书籍</view>
       <view wx:for="{{recomendBooks}}" class="weui-panel__bd">
@@ -32,11 +32,11 @@
         </view>
       </view>
     </view>
-    <!--附近热门书籍结束  -->
-    <!--推荐书籍  -->
+    <!--推荐书籍结束  -->
+    <!--附近热门书籍  -->
     <view class="weui-panel weui-panel_access">
-      <view class="weui-panel__hd left_border">最新书籍</view>
-      <view wx:for="{{recomendBooks}}" class="weui-panel__bd">
+      <view class="weui-panel__hd left_border">附近书籍</view>
+      <view wx:for="{{nearbyBooks}}" class="weui-panel__bd">
         <navigator url="/pages/detailBook/detailBook?bid={{item.bid}}" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
           <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
             <image class="weui-media-box__thumb" src="{{serverPath+item.bookpic}}" />
@@ -44,6 +44,7 @@
           <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
             <view class="weui-media-box__title">{{item.bookname}}</view>
             <view class="weui-media-box__desc">{{item.description}}</view>
+            <view style="float:right;" class="weui-media-box__desc">距您{{item.distance}}m</view>
           </view>
         </navigator>
       </view>
@@ -54,7 +55,7 @@
         </view>
       </view>
     </view>
-    <!--推荐书籍结束  -->
+    <!--附近热门书籍结束  -->
   </view>
   <view class="page__bd page__bd_spacing">
     <view class="weui-flex">

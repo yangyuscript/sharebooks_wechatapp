@@ -17,7 +17,7 @@ Page({
     //推荐书籍
     recomendBooks:[],
     //最新书籍
-    newestBooks:[],
+    nearbyBooks:[],
     serverPath:app.globalData.serverPath+'/'
   },
   //搜索框事件
@@ -39,9 +39,11 @@ Page({
     network.GET('/index/getInitialData', {
       params: {},
       success: function (res) {
+        console.log("附近书籍是:")
+        console.log(res.data.nearbyBooks)
         $that.setData({
           recomendBooks:res.data.recomendBooks,
-          newestBooks:res.data.newestBooks
+          nearbyBooks: res.data.nearbyBooks
         })
       },
       fail: function () {

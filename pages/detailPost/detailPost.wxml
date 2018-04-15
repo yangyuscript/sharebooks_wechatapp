@@ -15,8 +15,8 @@
           </view>
           <view class="weui-article__p">
             <view class="wxParse">
-  <template is="wxParse" data="{{wxParseData:content.nodes}}" />
-</view>
+              <template is="wxParse" data="{{wxParseData:content.nodes}}" />
+            </view>
           </view>
         </view>
       </view>

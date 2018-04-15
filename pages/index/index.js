@@ -2,6 +2,7 @@
 //获取应用实例
 const app = getApp()
 var network = require("../../utils/network.js")
+var WxParse = require('../../wxParse/wxParse.js')
 Page({
   data: {
     imgUrls: [
@@ -9,6 +10,7 @@ Page({
       'http://img06.tooopen.com/images/20160818/tooopen_sy_175866434296.jpg',
       'http://img06.tooopen.com/images/20160818/tooopen_sy_175833047715.jpg'
     ],
+    runpics:[],
     indicatorDots: false,
     autoplay: false,
     interval: 5000,
@@ -18,7 +20,25 @@ Page({
     recomendBooks:[],
     //最新书籍
     nearbyBooks:[],
-    serverPath:app.globalData.serverPath+'/'
+    serverPath:app.globalData.serverPath+'/',
+    flag: true
+  },
+  /**
+   * 弹出层函数
+   */
+  //出现
+  show: function (e) {
+    console.log(e.target.dataset.index)
+    var index=e.target.dataset.index
+    this.setData({ 
+      flag: false
+    })
+    WxParse.wxParse('content', 'html', this.data.runpics[index].description, this, 5)
+  },
+  //消失
+
+  hide: function () {
+    this.setData({ flag: true })
   },
   //搜索框事件
   showInput: function(){
@@ -43,7 +63,8 @@ Page({
         console.log(res.data.nearbyBooks)
         $that.setData({
           recomendBooks:res.data.recomendBooks,
-          nearbyBooks: res.data.nearbyBooks
+          nearbyBooks: res.data.nearbyBooks,
+          runpics: res.data.runpics
         })
       },
       fail: function () {

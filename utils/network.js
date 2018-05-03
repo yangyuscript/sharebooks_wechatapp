@@ -1,5 +1,6 @@
 //var API_URL = 'http://kischang.free.ngrok.cc'
-var API_URL = 'http://jaesyb.natappfree.cc'
+//var API_URL = 'http://8aqspq.natappfree.cc'
+var API_URL = 'https://sharebooks.yangyuscript.club/api/'
 
 var requestHandler = {
   params: {},

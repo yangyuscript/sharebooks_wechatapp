@@ -26,12 +26,12 @@
           </view>
         </navigator>
       </view>
-      <view class="weui-panel__ft">
+      <!-- <view class="weui-panel__ft">
         <view class="weui-cell weui-cell_access weui-cell_link">
           <view class="weui-cell__bd">查看更多</view>
           <view class="weui-cell__ft weui-cell__ft_in-access"></view>
         </view>
-      </view>
+      </view> -->
     </view>
     <!--推荐书籍结束  -->
     <!--附近热门书籍  -->
@@ -49,22 +49,22 @@
           </view>
         </navigator>
       </view>
-      <view class="weui-panel__ft">
+      <!-- <view class="weui-panel__ft">
         <view class="weui-cell weui-cell_access weui-cell_link">
           <view class="weui-cell__bd">查看更多</view>
           <view class="weui-cell__ft weui-cell__ft_in-access"></view>
         </view>
-      </view>
+      </view> -->
     </view>
     <!--附近热门书籍结束  -->
   </view>
-  <view class="page__bd page__bd_spacing">
+  <!-- <view class="page__bd page__bd_spacing">
     <view class="weui-flex">
       <view class="weui-flex__item">
         <view class="placeholder">weui</view>
       </view>
     </view>
-  </view>
+  </view> -->
   <!-- 弹出层内容，其中的“我知道”中绑定让弹出层消失的函数：bindtap="hide" -->
   <view class="modal-box" hidden="{{flag}}" bindtap="hide">
     <view class="modal-body">

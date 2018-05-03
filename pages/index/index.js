@@ -53,16 +53,15 @@ Page({
       url: '../logs/logs'
     })
   },
-  onLoad: function () {
-    //加载首页所需数据，附近热门书籍与推荐书籍
-    var $that= this
+  initData: function(){
+    var $that = this
     network.GET('/index/getInitialData', {
       params: {},
       success: function (res) {
         console.log("附近书籍是:")
         console.log(res.data.nearbyBooks)
         $that.setData({
-          recomendBooks:res.data.recomendBooks,
+          recomendBooks: res.data.recomendBooks,
           nearbyBooks: res.data.nearbyBooks,
           runpics: res.data.runpics
         })
@@ -81,7 +80,7 @@ Page({
         userInfo: app.globalData.userInfo,
         hasUserInfo: true
       })
-    } else if (this.data.canIUse){
+    } else if (this.data.canIUse) {
       // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
       // 所以此处加入 callback 以防止这种情况
       app.userInfoReadyCallback = res => {
@@ -102,5 +101,15 @@ Page({
         }
       })
     }
-  }
+  },
+  onLoad: function () {
+    //加载首页所需数据，附近热门书籍与推荐书籍
+    this.initData()
+  },
+  /**
+   * 页面相关事件处理函数--监听用户下拉动作
+   */
+  onPullDownRefresh: function () {
+    this.initData()
+  },
 })

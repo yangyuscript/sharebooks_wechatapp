@@ -1,10 +1,6 @@
 //app.js
 App({
   onLaunch: function () {
-    // 展示本地存储能力
-    // var logs = wx.getStorageSync('logs') || []
-    // logs.unshift(Date.now())
-    // wx.setStorageSync('logs', logs)
     console.log("app onLaunch执行啦。。。。。")
     var network = require("/utils/network.js")
     var $that=this
@@ -116,6 +112,7 @@ App({
     test: 'haha',
     bookTypes: [],
     //serverPath: 'http://kischang.free.ngrok.cc'
-    serverPath: 'http://jaesyb.natappfree.cc'
+    //serverPath: 'http://8aqspq.natappfree.cc'
+    serverPath:'https://sharebooks.yangyuscript.club/api/'
   }
 })

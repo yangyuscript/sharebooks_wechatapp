@@ -42,10 +42,10 @@
 
     <view class="weui-footer">
       <view class="weui-footer__links">
-        <navigator url="" class="weui-footer__link">底部链接</navigator>
-        <navigator url="" class="weui-footer__link">底部链接</navigator>
+        <navigator url="" class="weui-footer__link">流书</navigator>
+        <navigator url="" class="weui-footer__link">共享书籍</navigator>
       </view>
-      <view class="weui-footer__text">Copyright © 2008-2018 liushu.io</view>
+      <view class="weui-footer__text">Copyright © 2008-2018 www.yangyuscript.club</view>
     </view>
 
 

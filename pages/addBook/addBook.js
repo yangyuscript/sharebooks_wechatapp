@@ -115,6 +115,9 @@ Page({
         url: getApp().globalData.serverPath + '/user/addBook',
         filePath: $tempfile,
         name: 'bookHead',
+        header:{
+          "x-access-token": wx.getStorageSync('token')
+        },
         formData: {
           'bookName': $bookname,
           'bookTypeId': $booktypeid,

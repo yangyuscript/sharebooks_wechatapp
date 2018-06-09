@@ -7,7 +7,7 @@ Page({
    */
   data: {
     notices: [],
-    currPage: 0,
+    currPage: 1,
     serverPath: getApp().globalData.serverPath + '/'
   },
 
@@ -72,7 +72,7 @@ Page({
    */
   onPullDownRefresh: function () {
     this.setData({
-      currPage: 0,
+      currPage: 1,
       notices: []
     })
     this.initData()

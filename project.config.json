@@ -34,7 +34,7 @@
 				{
 					"id": 0,
 					"name": "testmybooks",
-					"pathName": "pages/search/search",
+					"pathName": "pages/viewUser/viewUser",
 					"query": ""
 				}
 			]

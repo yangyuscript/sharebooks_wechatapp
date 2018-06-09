@@ -9,7 +9,7 @@ Page({
   data: {
     poster:null,
     postedBooks:[],
-    currPage:0,
+    currPage:1,
     currLogid:0,
     serverPath: app.globalData.serverPath + '/'
   },
@@ -37,6 +37,8 @@ Page({
    */
   getData:function(){
     var $that=this
+    console.log("40行此时$currPage是" + $that.data.currPage);
+    console.log("40行此时logid是" + $that.data.currLogid);
     network.POST("/user/getDataForViewUser", {
       params: {
         logid: $that.data.currLogid,
@@ -44,6 +46,7 @@ Page({
       },
       success: function (res) {
         if (res.data.status == 'ok') {
+          console.log(res.data.postedBooks)
           var $postedBooks=$that.data.postedBooks.concat(res.data.postedBooks)
           $that.setData({
             poster: res.data.poster,
@@ -101,7 +104,12 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-  
+    this.setData({
+      currPage: 1,
+      postedBooks: []
+    })
+    this.getData()
+    wx.stopPullDownRefresh()
   },
 
   /**
@@ -109,11 +117,11 @@ Page({
    */
   onReachBottom: function () {
     var $currPage=this.data.currPage+1
+    console.log("117行此时$currPage是"+$currPage);
     this.setData({
       currPage:$currPage
     })
     this.getData()
-    
   },
 
   /**

@@ -8,7 +8,7 @@ Page({
   data: {
     searchKey:'',
     searchBooks:[],
-    currPage:0,
+    currPage:1,
     serverPath: getApp().globalData.serverPath + '/'
   },
   bindKeyInput: function(e){
@@ -19,7 +19,7 @@ Page({
   searchBooks: function(e){
     this.setData({
       searchBooks: [],
-      currPage: 0
+      currPage: 1
     })
     this.initData()
   },
@@ -90,8 +90,10 @@ Page({
     this.setData({
       searchKey:'',
       searchBooks:[],
-      currPage:0
+      currPage:1
     })
+    this.initData()
+    wx.stopPullDownRefresh()
   },
 
   /**

@@ -20,6 +20,7 @@ Page({
     recomendBooks:[],
     //最新书籍
     nearbyBooks:[],
+    nearbyCurrPage:1,
     serverPath:app.globalData.serverPath+'/',
     flag: true
   },
@@ -36,7 +37,6 @@ Page({
     WxParse.wxParse('content', 'html', this.data.runpics[index].description, this, 5)
   },
   //消失
-
   hide: function () {
     this.setData({ flag: true })
   },
@@ -56,15 +56,20 @@ Page({
   initData: function(){
     var $that = this
     network.GET('/index/getInitialData', {
-      params: {},
+      params: {
+        nearbyCurrPage: $that.data.nearbyCurrPage
+      },
       success: function (res) {
         console.log("附近书籍是:")
         console.log(res.data.nearbyBooks)
-        $that.setData({
-          recomendBooks: res.data.recomendBooks,
-          nearbyBooks: res.data.nearbyBooks,
-          runpics: res.data.runpics
-        })
+        if(res.data.nearbyBooks!=null){
+          var $nearbyBooks = $that.data.nearbyBooks.concat(res.data.nearbyBooks)
+          $that.setData({
+            recomendBooks: res.data.recomendBooks,
+            nearbyBooks: $nearbyBooks,
+            runpics: res.data.runpics
+          })
+        }
       },
       fail: function () {
         console.log('加载首页初始化数据失败！')
@@ -104,13 +109,32 @@ Page({
   },
   onLoad: function () {
     //加载首页所需数据，附近热门书籍与推荐书籍
-    this.initData()
+    console.log("加载首页所需数据，附近热门书籍与推荐书籍")
+    this.initData()  
   },
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
+    this.data.nearbyCurrPage = 1
     this.initData()
     wx.stopPullDownRefresh()
   },
+  /**
+   * 页面上拉触底事件的处理函数
+   */
+  onReachBottom: function () {
+    var $nearbyCurrPage = this.data.nearbyCurrPage + 1
+    this.setData({
+      nearbyCurrPage: $nearbyCurrPage
+    })
+    this.initData()
+  },
+
+  /**
+   * 用户点击右上角分享
+   */
+  onShareAppMessage: function () {
+
+  }
 })

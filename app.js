@@ -55,25 +55,22 @@ App({
         }
       }
     })
+  },
+  onShow: function(){
+    console.log("app onShow执行啦。。。。。")
+    var network = require("/utils/network.js")
+    var $that= this
     // 获取用户信息
     wx.getSetting({
       success: res => {
+        console.log("更新用户信息中。。。。。")
         if (res.authSetting['scope.userInfo']) {
           // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
+          console.log("已经授权，可以直接调用 getUserInfo 获取头像昵称")
           wx.getUserInfo({
             success: res => {
-              // 可以将 res 发送给后台解码出 unionId
               $that.globalData.userInfo = res.userInfo
               console.log(res.userInfo)
-              // var $user = {
-              //   nickName: res.userInfo.nickName,
-              //   head: res.userInfo.avatarUrl,
-              //   gender: res.userInfo.gender,
-              //   city: res.userInfo.city,
-              //   province: res.userInfo.province,
-              //   country: res.userInfo.country,
-              //   language: res.userInfo.language
-              // }
               network.POST("/user/updateUserInfo", {
                 params: {
                   token: wx.getStorageSync("token"),
@@ -101,9 +98,8 @@ App({
           })
         }
       }
-    })
+    })  
   },
-  
   globalData: {
     userInfo: null,
     latitude: 0,
@@ -112,7 +108,7 @@ App({
     test: 'haha',
     bookTypes: [],
     //serverPath: 'http://kischang.free.ngrok.cc'
-    //serverPath: 'http://8aqspq.natappfree.cc'
+    //serverPath: 'http://wns92d.natappfree.cc'
     serverPath:'https://sharebooks.yangyuscript.club/api/'
   }
 })
